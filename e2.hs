@@ -8,8 +8,8 @@ fbci x = fbci (x-1) + fbci (x-2)
 calFb :: Int -> Int -> Int
 calFb s n
     | result <= n = calFb (s+1) n
-    | otherwise  = s - 1
-    where result = fbci s
+    | otherwise   = s - 1
+    where result  = fbci s
 
 maxFb :: Int -> Int
 maxFb = calFb 1

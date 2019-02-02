@@ -8,17 +8,17 @@ isPrime k
 nextPrime :: Int -> Int
 nextPrime x
     | isPrime (x+1) = x+1
-    | otherwise = nextPrime (x+1)
+    | otherwise     = nextPrime (x+1)
 
 factor :: Int -> Int -> Int -> Int
 factor l c x
-    | out && not finish = factor c c (x `div` c)
+    | out && not finish     = factor c c (x `div` c)
     | not out && not finish = factor l q x
-    | otherwise = c
+    | otherwise             = c
     where 
-        out = x `mod` c == 0
+        out    = x `mod` c == 0
         finish = c == x
-        q = nextPrime c
+        q      = nextPrime c
 
 getFact :: Int -> Int
 getFact = factor 2 2

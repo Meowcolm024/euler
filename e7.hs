@@ -8,8 +8,8 @@ isPrime k
 getPrime :: Int -> Int -> Int -> Int
 getPrime last this max
     | prime && not reach = getPrime this (this+1) (max-1)
-    | prime && reach = this
-    | otherwise = getPrime last (this+1) max
+    | prime && reach     = this
+    | otherwise          = getPrime last (this+1) max
     where prime = isPrime this
           reach = max == 0
 
