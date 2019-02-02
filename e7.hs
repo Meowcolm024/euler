@@ -1,3 +1,5 @@
+-- 10001st prime
+
 isPrime :: Int -> Bool
 isPrime k
     | k <= 1    = error "Seriously?"
