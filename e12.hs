@@ -18,3 +18,6 @@ findNum n
     where tri = triNum n
           divs = getDiv tri
           ext  = 500
+
+main::IO()
+main = print (findNum 1)
