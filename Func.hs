@@ -8,7 +8,7 @@ getDiv n
     where divs  = [x | x <- [1..floor(sqrt(fromIntegral n))], n `mod` x == 0]
           sq    = floor(sqrt(fromIntegral n)) ^ 2
 
-isPrime :: Int -> Bool
+isPrime :: Integer -> Bool
 isPrime k
     | k <= 1    = error "Seriously?"
     | otherwise = null [ x | x <- [2..floor(sqrt(fromIntegral k))], k `mod` x == 0]
@@ -24,3 +24,8 @@ dp_fib fibs n m
 
 fib :: Int -> Integer
 fib = dp_fib [1,1] 2
+
+fib1 = (map fib' [0..] !!)                 
+     where fib' 1 = 1                                                        
+           fib' 2 = 1                                                        
+           fib' n = fib1 (n-2) + fib1 (n-1)
