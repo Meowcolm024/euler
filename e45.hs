@@ -1,4 +1,4 @@
--- Problem 45
+-- Problem 45: Triangular, pentagonal, and hexagonal
 -- ghc e45.hs -o e.out -O2
 -- time ./e.out
 -- [1,40755,1533776805]

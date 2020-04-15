@@ -1,4 +1,4 @@
--- Digit factorials
+-- Self powers
 
 s = [1..1000]
 t = map (\x -> x ^ x) s
