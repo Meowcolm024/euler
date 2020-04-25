@@ -18,3 +18,14 @@ fromStr n = [read [x] :: Int | x <- n, x /= ' ']
 
 fibs :: [Integer]
 fibs = 1 : 1 : zipWith (+) fibs (tail fibs)
+
+ele :: Int -> [Int] -> Bool
+ele _ [] = False
+ele n (x:xs) | n == x = True
+             | n < x  = False
+             | otherwise = ele n xs
+
+primes = filterPrime [2..]
+  where filterPrime (p:xs) =
+          p : filterPrime [x | x <- xs, x `mod` p /= 0]
+          
