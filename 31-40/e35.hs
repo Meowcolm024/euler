@@ -1,5 +1,5 @@
+-- Circular primes
 import Data.List
---import Math.NumberTheory.Primes
 
 rotate :: Eq a => [a] -> [[a]]
 rotate []     = []
