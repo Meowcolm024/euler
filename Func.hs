@@ -21,3 +21,7 @@ primes = filter isPrime [2 ..]
         go d | d * d > n      = True
              | n `rem` d == 0 = False
              | otherwise      = go (d + 1)
+
+listToInt :: Num p => [p] -> p
+listToInt [] = 0
+listToInt (x:xs) = x * 10 ^ (length xs) + listToInt xs
