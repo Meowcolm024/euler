@@ -3,6 +3,7 @@ import Data.List
 primes :: [Int]
 primes = filter isPrime [2 ..]
 
+isPrime :: Int -> Bool
 isPrime n = go 2
   where
     go d
@@ -27,9 +28,13 @@ cons :: [Int] -> [(Int, Int)]
 cons [] = []
 cons xs = conse 0 0 xs [] ++ cons (tail xs)
 
--- >>> sortBy (\(_,c) (_,d) -> compare d c) result
 result :: (Int, Int)
 result = head $ sortBy (\(_,c) (_,d) -> compare d c) $ cons needed
 
 main :: IO ()
 main = print result
+
+{- 
+(997651,543)
+./e.out  1.38s user 0.03s system 73% cpu 1.903 total 
+-}

@@ -2,6 +2,6 @@
 
 # Project Euler
 
-Trying to answer the questions in [Project Euler](https://projecteuler.net)
+Trying solve problems in [Project Euler](https://projecteuler.net)
 
 Most of the codes will be in **Haskell**, but some of them maybe in **Python**.
