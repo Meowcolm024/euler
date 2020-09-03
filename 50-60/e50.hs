@@ -1,4 +1,4 @@
-import Data.List
+import Data.List ( sortBy )
 
 primes :: [Int]
 primes = filter isPrime [2 ..]
@@ -16,7 +16,6 @@ needed = takeWhile (< 1000000) primes
 
 conse :: Int -> Int -> [Int] -> [(Int, Int)] -> [(Int, Int)]
 conse _ _ [] ys = ys
-conse c _ xs [] = conse c 0 xs [(1, 0)]
 conse acc i (x : xs) ys
   | c > 1000000 = ys
   | isPrime c = conse c (i+1) xs ((c, i + 1) : ys)
