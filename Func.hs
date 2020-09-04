@@ -1,6 +1,8 @@
 -- Storing useful functions
 module Func where
 
+import Data.Char (digitToInt)
+
 fromStr :: String -> [Int]
 fromStr n = [ read [x] :: Int | x <- n, x /= ' ' ]
 
@@ -25,3 +27,6 @@ primes = filter isPrime [2 ..]
 listToInt :: Num p => [p] -> p
 listToInt [] = 0
 listToInt (x:xs) = x * 10 ^ (length xs) + listToInt xs
+
+intToList :: Int -> [Int]
+intToList = map (digitToInt) . show
