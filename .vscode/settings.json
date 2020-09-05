@@ -1,3 +1,5 @@
 {
-    "python.linting.pylintEnabled": true
+    "python.linting.pylintEnabled": true,
+    "has-go.reuseTerminal": true,
+    "has-go.overrideGHCiArgs": "${current} -XLambdaCase"
 }

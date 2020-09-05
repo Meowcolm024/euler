@@ -2,6 +2,7 @@
 module Func where
 
 import Data.Char (digitToInt)
+-- import Data.List.Ordered (minus)
 
 fromStr :: String -> [Int]
 fromStr n = [ read [x] :: Int | x <- n, x /= ' ' ]
@@ -15,14 +16,14 @@ ele n (x : xs) | n == x    = True
                | n < x     = False
                | otherwise = ele n xs
 
-primes :: [Integer]
+{- primes :: [Integer]
 primes = filter isPrime [2 ..]
   where
     isPrime n = go 2
       where
         go d | d * d > n      = True
              | n `rem` d == 0 = False
-             | otherwise      = go (d + 1)
+             | otherwise      = go (d + 1) -}
 
 listToInt :: Num p => [p] -> p
 listToInt [] = 0
@@ -30,3 +31,9 @@ listToInt (x:xs) = x * 10 ^ (length xs) + listToInt xs
 
 intToList :: Int -> [Int]
 intToList = map (digitToInt) . show
+
+primes :: [Int]
+primes = 2 : filter isPrime [3 ..]
+
+isPrime :: Int -> Bool
+isPrime n = foldr (\x acc -> (x*x > n) || (n `rem` x /= 0 && acc)) False primes
